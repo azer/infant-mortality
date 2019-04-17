@@ -1,16 +1,25 @@
 const readFile = require("fs").readFileSync
+const writeFile = require("fs").writeFileSync
 
 generate()
 
 function generate() {
   const regions = JSON.parse(readFile(process.argv[2]))
+
   for (let region in regions) {
-    console.log("# ", region)
-    console.log("| Year | Estimate |")
-    console.log("| ---- | -------- |")
+    const filename = `./markdown/regions/${region}.md`
+
+    const buf = []
+    buf.push(`# ${region}`)
+    buf.push("")
+    buf.push("| Year | Estimate |")
+    buf.push("| ---- | -------- |")
     regions[region]
       .sort(sortByYear)
-      .forEach(row => console.log("| %s | %s |", row.year, row.estimate))
+      .forEach(row => buf.push(`| ${row.year} | ${row.estimate} |`))
+
+    console.log("Writing %s", region)
+    writeFile(filename, buf.join("\n"))
   }
 }
 
