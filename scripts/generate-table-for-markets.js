@@ -38,11 +38,11 @@ const emergingAndGrowingMarkets = [
   "Turkey"
 ]
 
-generate(emergingAndGrowingMarkets)
+generate(developedMarkets)
 
 function generate(selectedRegions) {
   console.log(`| Year | ${selectedRegions.join(" | ")} |`)
-  console.log(`| Year | ${selectedRegions.map(r => "---").join(" | ")} |`)
+  console.log(`| --- | ${selectedRegions.map(r => "---").join(" | ")} |`)
 
   let year = 2018
   while (year-- > 1980) {
