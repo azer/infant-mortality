@@ -38,7 +38,38 @@ const emergingAndGrowingMarkets = [
   "Turkey"
 ]
 
-generate(developedMarkets)
+const g7 = [
+  "Canada",
+  "France",
+  "Germany",
+  "Italy",
+  "United Kingdom",
+  "United States"
+]
+
+const g20 = [
+  "Australia",
+  "Canada",
+  "Saudi Arabia",
+  "United States",
+  "India",
+  "Russia",
+  "South Africa",
+  "Turkey",
+  "Argentina",
+  "Brazil",
+  "Mexico",
+  "France",
+  "Germany",
+  "Italy",
+  "United Kingdom",
+  "China",
+  "Indonesia",
+  "Japan",
+  "Republic of Korea"
+]
+
+generate(g20)
 
 function generate(selectedRegions) {
   console.log(`| Year | ${selectedRegions.join(" | ")} |`)
