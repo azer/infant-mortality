@@ -69,7 +69,20 @@ const g20 = [
   "Republic of Korea"
 ]
 
-generate(g20)
+const top10economies = [
+  "United States",
+  "China",
+  "Japan",
+  "Germany",
+  "United Kingdom",
+  "India",
+  "France",
+  "Brazil",
+  "Italy",
+  "Canada"
+]
+
+generate(top10economies)
 
 function generate(selectedRegions) {
   console.log(`| Year | ${selectedRegions.join(" | ")} |`)
